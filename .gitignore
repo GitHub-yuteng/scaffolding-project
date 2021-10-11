@@ -1,0 +1,48 @@
+HELP.md
+target/
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+.gradle
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+/src/main/resources/rebel.xml
+/src/main/resources/rebel-remote.xml
+
+### VS Code ###
+.vscode/
+
+mycode/
+mvnw
+mvnw.cmd
+*.eml
+*.log
+*.log.*
+.DS_Store
+*.cache
+*.lock
+/build/
+*.settings
+.gradle/
