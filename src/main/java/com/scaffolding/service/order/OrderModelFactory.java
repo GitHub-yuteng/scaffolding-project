@@ -18,7 +18,7 @@ public class OrderModelFactory {
     /**
      * 订单模式策略
      */
-    private Map<String, IOrderModelStrategy> orderModelStrategy = new HashMap<>();
+    private final Map<String, IOrderModelStrategy> orderModelStrategy = new HashMap<>();
 
     public OrderModelFactory(List<IOrderModelStrategy> modelStrategyList) {
         for (IOrderModelStrategy modelStrategy : modelStrategyList) {
@@ -34,7 +34,6 @@ public class OrderModelFactory {
      * @return
      */
     public IOrderModelStrategy getOrderModelStrategy(String clazzName) {
-        IOrderModelStrategy orderModelStrategy = this.orderModelStrategy.get(clazzName);
-        return orderModelStrategy;
+        return this.orderModelStrategy.get(clazzName);
     }
 }

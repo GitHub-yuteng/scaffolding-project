@@ -10,9 +10,13 @@ public class PathGlobalConstant {
 
     public static final String INTERCEPT_PATH = "/app";
 
-    // 订单相关
+    /**
+     * 订单
+     */
     public static final String ORDER_PATH = "/order";
-    //拜访相关
+    /**
+     * 拜访
+     */
     public static final String VISIT_PATH = "/visit";
 
 }
