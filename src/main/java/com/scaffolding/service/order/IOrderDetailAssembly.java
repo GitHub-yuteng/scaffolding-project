@@ -1,7 +1,9 @@
 package com.scaffolding.service.order;
 
 
+import com.scaffolding.auth.UserInfo;
 import com.scaffolding.pojo.vo.order.detail.OrderDetailVO;
+import com.scaffolding.pojo.vo.order.list.OrderItemVO;
 
 /**
  * @Author: yt
@@ -16,7 +18,7 @@ public interface IOrderDetailAssembly {
      * @param userInfo
      * @param model
      */
-    void assemblyDetailLabel(OrderDetailVO orderDetailVO, UserInfoDto userInfo, Integer model);
+    void assemblyDetailLabel(OrderDetailVO orderDetailVO, UserInfo userInfo, Integer model);
 
     /**
      * 组装收货人信息
@@ -24,14 +26,14 @@ public interface IOrderDetailAssembly {
      * @param userInfo
      * @param model
      */
-    void assemblyReceiver(OrderDetailVO orderDetailVO, UserInfoDto userInfo, Integer model);
+    void assemblyReceiver(OrderDetailVO orderDetailVO, UserInfo userInfo, Integer model);
 
     /**
      * 组装订单商品对应标签
      *
-     * @param orderItemVOList
+     * @param
      */
-    void assemblyOrderDetailGoodsLables(OrderItemVO orderItemVO, UserInfoDto userInfo);
+    void assemblyOrderDetailGoodsLables(OrderItemVO orderItemVO, UserInfo userInfo);
 
     /**
      * 处理订单详情金额信息
@@ -39,7 +41,7 @@ public interface IOrderDetailAssembly {
      * @param userInfo
      * @param model
      */
-    void assemblyMoneyList(OrderDetailVO orderDetailVO, UserInfoDto userInfo, Integer model);
+    void assemblyMoneyList(OrderDetailVO orderDetailVO, UserInfo userInfo, Integer model);
 
     /**
      * 订单底部信息
@@ -47,7 +49,7 @@ public interface IOrderDetailAssembly {
      * @param userInfo
      * @param model
      */
-    void assemblyBelowList(OrderDetailVO orderDetailVO, UserInfoDto userInfo, Integer model);
+    void assemblyBelowList(OrderDetailVO orderDetailVO, UserInfo userInfo, Integer model);
 
 
     /**
@@ -56,7 +58,7 @@ public interface IOrderDetailAssembly {
      * @param orderItemVO
      * @param userInfo
      */
-    void assemblyAfterSaleBtnList(OrderItemVO orderItemVO, UserInfoDto userInfo);
+    void assemblyAfterSaleBtnList(OrderItemVO orderItemVO, UserInfo userInfo);
 
     /**
      * 组装商品信息售后按钮
@@ -64,5 +66,5 @@ public interface IOrderDetailAssembly {
      * @param orderItemVO
      * @param userInfo
      */
-    void assemblyGoodsAfterSaleBtnList(OrderItemVO orderItemVO, UserInfoDto userInfo);
+    void assemblyGoodsAfterSaleBtnList(OrderItemVO orderItemVO, UserInfo userInfo);
 }

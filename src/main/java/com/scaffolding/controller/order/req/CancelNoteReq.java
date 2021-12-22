@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @Description:
  */
 @Data
-public class CancelNoteReq extends com.whhim.szh.controller.app.orderInfo.model.OrderModelReq implements Serializable {
+public class CancelNoteReq extends OrderModelReq implements Serializable {
 
     private static final long serialVersionUID = 5441144538763883742L;
     /**

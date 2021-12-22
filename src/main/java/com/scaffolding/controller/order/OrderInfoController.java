@@ -1,6 +1,6 @@
 package com.scaffolding.controller.order;
 
-import com.scaffolding.constant.OrderInfoConstant;
+import com.scaffolding.constant.GlobalConstant;
 import com.scaffolding.constant.path.PathGlobalConstant;
 import com.scaffolding.controller.order.req.OrderListReq;
 import com.scaffolding.exception.AppException;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 /**
@@ -24,26 +23,25 @@ import javax.validation.Valid;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = PathGlobalConstant.INTERCEPT_PATH + PathGlobalConstant.ORDER_PATH)
+@RequestMapping(value = PathGlobalConstant.INTERCEPT_PATH + GlobalConstant.VERSION_1 + PathGlobalConstant.ORDER_PATH)
 public class OrderInfoController {
 
     /**
      * 获取订单列表
      *
      * @param orderListReq
-     * @param response
      * @return
      */
     @PostMapping(value = "/orderList")
-    public ResponseResult<BasePageVO<OrderItemVO>> queryOrderList(@RequestBody @Valid OrderListReq orderListReq, HttpServletResponse response) {
+    public ResponseResult<BasePageVO<OrderItemVO>> queryOrderList(@RequestBody @Valid OrderListReq orderListReq) {
         try {
             log.info("OrderInfoController#queryOrderList: 获取订单列表请求, param:{}", orderListReq.toString());
             return ResponseResult.success();
         } catch (AppException e) {
             return ResponseResult.fail(e.getMessage());
         } catch (Exception e) {
-            log.error("OrderInfoController#queryOrderDetail, 获取订单列表, param:{}, Exception:{}", orderListReq.toString(), e.getMessage());
-            return ResponseResult.fail(OrderInfoConstant.ORDER_ERROR_RETURN);
+            log.error("OrderInfoController#queryOrderList, Error ==> 获取订单列表, param:{}, Exception:{}", orderListReq.toString(), e.getMessage());
+            return ResponseResult.fail(GlobalConstant.ORDER_ERROR_RETURN);
         }
     }
 }

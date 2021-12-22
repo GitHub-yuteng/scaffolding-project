@@ -8,6 +8,9 @@ package com.scaffolding.constant.path;
 public class PathGlobalConstant {
 
 
+    /**
+     * 需要拦截获取用户信息前缀
+     */
     public static final String INTERCEPT_PATH = "/app";
 
     /**

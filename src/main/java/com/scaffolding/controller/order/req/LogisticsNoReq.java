@@ -1,8 +1,8 @@
 package com.scaffolding.controller.order.req;
 
 import lombok.Data;
-import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.List;
 

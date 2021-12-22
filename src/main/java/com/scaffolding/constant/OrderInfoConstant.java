@@ -8,7 +8,6 @@ package com.scaffolding.constant;
 public class OrderInfoConstant {
 
     public static final String ORDER_REMINDER                 = "订单即将关闭, 请尽快付款";
-    public static final String ORDER_ERROR_RETURN             = "网络异常,请稍后重试";
     public static final String ORDER_MODEL                    = "订单模式错误";
     public static final String NO_AFFILIATED_SHOP             = "您无挂靠经销商";
     public static final String NO_AFFILIATED_TM               = "当前业务员未挂靠终端";
@@ -28,7 +27,7 @@ public class OrderInfoConstant {
     public static final String ACTIVITY_INFO_ERROR          = "活动信息异常, 请稍后再试";
     public static final String ORDER_NO_IS_NULL             = "订单编号为空";
     public static final String ORDER_IS_NULL                = "订单不存在";
-    public static final String ORDERD_ITEM_NO_IS_NULL       = "订单信息行项目为空";
+    public static final String ORDER_D_ITEM_NO_IS_NULL       = "订单信息行项目为空";
     public static final String AFTER_SALE_ORDER_NO_IS_NULL  = "售后订单编号为空";
     public static final String AFTER_SALE_ORDER_ERROR       = "售后订单信息异常, 请稍后再试";
     public static final String AFTER_SALE_ORDER_IS_NUL      = "售后订单不存在";

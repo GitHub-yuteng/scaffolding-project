@@ -12,7 +12,7 @@ import java.util.List;
  * @Description:
  */
 @Data
-public class OrderListReq extends com.whhim.szh.controller.app.orderInfo.model.OrderModelReq implements Serializable {
+public class OrderListReq extends OrderModelReq implements Serializable {
 
     private static final long serialVersionUID = -3295802549570836409L;
 
