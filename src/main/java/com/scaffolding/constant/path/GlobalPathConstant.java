@@ -15,17 +15,18 @@ public class GlobalPathConstant {
     /**
      *
      */
-    public static final String HOME = "/home";
-    public static final String MESSAGE = "/message";
-    public static final String TOOLS = "/tools";
-    public static final String MINE = "/mine";
+    public static final String HOME         = "/home";
+    public static final String MESSAGE      = "/message";
+    public static final String TOOLS        = "/tools";
+    public static final String MINE         = "/mine";
     /**
      * 订单
      */
-    public static final String ORDER_PATH = "/order";
+    public static final String ORDER_PATH   = "/order";
     /**
      * 拜访
      */
-    public static final String VISIT_PATH = "/visit";
+    public static final String VISIT_PATH   = "/visit";
+    public static final String VISIT_REPORT_PATH = "/visit-report";
 
 }

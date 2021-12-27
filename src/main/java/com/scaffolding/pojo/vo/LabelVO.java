@@ -7,11 +7,11 @@ import java.io.Serializable;
 /**
  * @Description: TODO
  * @Author whh-yt
- * @Date 2021/12/27 4:34 下午
+ * @Date 2021/12/27 6:37 下午
  */
 @Data
-public class StatusCountVO implements Serializable {
+public class LabelVO implements Serializable {
 
-    private Integer type;
-    private Integer count;
+    private Integer labelType;
+    private String labelDesc;
 }
