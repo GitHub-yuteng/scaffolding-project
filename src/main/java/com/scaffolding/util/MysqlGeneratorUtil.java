@@ -59,7 +59,7 @@ public class MysqlGeneratorUtil {
                     // 取消生成 Service ServiceImpl 文件
                     builder.serviceBuilder().formatServiceFileName("").formatServiceImplFileName("");
                     // 添加 mapper 注解
-                    builder.mapperBuilder().enableMapperAnnotation();
+                    builder.mapperBuilder().enableMapperAnnotation().formatXmlFileName("");
 
                 })
                 // 使用Freemarker引擎模板，默认的是Velocity引擎模板
