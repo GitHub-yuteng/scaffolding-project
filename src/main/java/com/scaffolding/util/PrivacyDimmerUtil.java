@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 信息脱敏工具类
+ * @author whh-yt
  */
 public class PrivacyDimmerUtil {
 
@@ -39,9 +40,6 @@ public class PrivacyDimmerUtil {
         if (!email.contains(at)) {
             return email;
         }
-        /**
-         * 这里主要逻辑是需要保留邮箱的注册商 比如@qq.com
-         */
         int length = StringUtils.indexOf(email, at);
         String content = StringUtils.substring(email, 0, length);
         String mask = StringUtils.overlay(content, OVERLAY, START, END);
