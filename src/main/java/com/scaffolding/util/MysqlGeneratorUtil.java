@@ -17,8 +17,6 @@ public class MysqlGeneratorUtil {
     public static void main(String[] args) {
 
         String projectPath = System.getProperty("user.dir");
-        System.out.println(projectPath);
-        System.out.println("===========");
         FastAutoGenerator.create(MYSQL_IP, USERNAME, PASSWORD)
                 // 全局配置
                 .globalConfig(builder -> {
@@ -65,7 +63,6 @@ public class MysqlGeneratorUtil {
                 // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .templateEngine(new FreemarkerTemplateEngine())
                 .execute();
-
     }
 
 }
