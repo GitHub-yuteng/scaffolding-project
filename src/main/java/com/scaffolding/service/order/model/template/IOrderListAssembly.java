@@ -6,4 +6,5 @@ package com.scaffolding.service.order.model.template;
  * @Description: 提供组装订单部分信息功能
  */
 public interface IOrderListAssembly {
+
 }
