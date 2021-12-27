@@ -1,19 +1,10 @@
 package com.scaffolding.controller.order;
 
 import com.scaffolding.constant.GlobalConstant;
-import com.scaffolding.constant.path.PathGlobalConstant;
-import com.scaffolding.controller.order.req.OrderListReq;
-import com.scaffolding.exception.AppException;
-import com.scaffolding.pojo.vo.BasePageVO;
-import com.scaffolding.pojo.vo.order.list.OrderItemVO;
-import com.scaffolding.response.ResponseResult;
+import com.scaffolding.constant.path.GlobalPathConstant;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.validation.Valid;
 
 /**
  * @Author: yt
@@ -23,25 +14,9 @@ import javax.validation.Valid;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = PathGlobalConstant.INTERCEPT_PATH + GlobalConstant.VERSION_1 + PathGlobalConstant.ORDER_PATH)
+@RequestMapping(value = GlobalPathConstant.INTERCEPT_PATH + GlobalConstant.VERSION_1 + GlobalPathConstant.ORDER_PATH)
 public class OrderInfoController {
 
-    /**
-     * 获取订单列表
-     *
-     * @param orderListReq
-     * @return
-     */
-    @PostMapping(value = "/orderList")
-    public ResponseResult<BasePageVO<OrderItemVO>> queryOrderList(@RequestBody @Valid OrderListReq orderListReq) {
-        try {
-            log.info("OrderInfoController#queryOrderList: 获取订单列表请求, param:{}", orderListReq.toString());
-            return ResponseResult.success();
-        } catch (AppException e) {
-            return ResponseResult.fail(e.getMessage());
-        } catch (Exception e) {
-            log.error("OrderInfoController#queryOrderList, Error ==> 获取订单列表, param:{}, Exception:{}", orderListReq.toString(), e.getMessage());
-            return ResponseResult.fail(GlobalConstant.ORDER_ERROR_RETURN);
-        }
-    }
+    
+
 }

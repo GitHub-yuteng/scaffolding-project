@@ -5,14 +5,20 @@ package com.scaffolding.constant.path;
  * @Date 2021/8/17
  * @Dec 全局常量池
  */
-public class PathGlobalConstant {
+public class GlobalPathConstant {
 
 
     /**
      * 需要拦截获取用户信息前缀
      */
     public static final String INTERCEPT_PATH = "/app";
-
+    /**
+     *
+     */
+    public static final String HOME = "/home";
+    public static final String MESSAGE = "/message";
+    public static final String TOOLS = "/tools";
+    public static final String MINE = "/mine";
     /**
      * 订单
      */
