@@ -1,4 +1,4 @@
-package com.scaffolding.enums.order;
+package com.scaffolding.service.order.enums;
 
 
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum OrderButtonEnum {
     /**
-     * 订单按钮枚举  排序值越小 越靠右显示
+     * 订单按钮枚举  排序值越小 越靠右显示（售后除外）
      */
     PAY_IMMEDIATELY         (0, "立即支付",10),
     ANOTHER_ORDER           (1, "再来一单",35),
@@ -25,9 +25,9 @@ public enum OrderButtonEnum {
     PICK_UP_SUCCESS         (12, "取货成功",1),
     PICK_UP_FAILED          (13, "取货失败",1),
     CONFIRM_STORAGE         (14, "确认入库",1),
-    CONFIRM_REFUND          (15, "确认退款",2),
+    CONFIRM_REFUND          (15, "确认退款",3),
     RECEIVING_CODE          (16, "收货码", 36),
-    VIEW_LOGISTICS          (17, "查看物流",21),
+    VIEW_LOGISTICS          (17, "查看物流",40),
     RECEIVE_ORDER           (18, "接单",   1),
     REFUSED_ORDER           (19, "拒绝接单",1),
     DELIVERED               (20, "发货",   1),
@@ -43,13 +43,20 @@ public enum OrderButtonEnum {
 
     FILL_IN_THE_LOGISTICS   (50, "我已寄出 填写物流信息",1),
     APPLICATION_MODIFY      (51, "修改申请",2),
-    CONFIRM_TO_SIGN         (52, "确认签收",2),
+    CONFIRM_TO_SIGN         (52, "确认签收",3),
     REFUSE_TO_SIGN          (53, "拒绝签收",2),
-    REFUSE_REFUND           (55, "拒绝退款",3),
+    REFUSE_REFUND           (55, "拒绝退款",2),
     REFUSE_PICKUP           (56, "拒绝取件",1),
     AGREE_PICKUP            (57, "确认取件",3),
     CONTACT_SELLER          (59, "联系卖家",1),
-    MAKE_A_CALL             (61, "拨打电话",2)
+    MAKE_A_CALL             (61, "拨打电话",2),
+
+
+    PLATFORM_CALL           (1001, "拨打电话",10),
+    PLATFORM_COMPLAINT      (1002, "平台申诉",20),
+    PLATFORM_CALL_SHOP      (1003, "联系卖家",5),
+
+
 
 
     ;

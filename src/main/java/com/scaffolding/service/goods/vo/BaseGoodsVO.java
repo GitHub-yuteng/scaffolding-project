@@ -45,7 +45,7 @@ public class BaseGoodsVO implements Serializable {
      */
     private String spuCode;
     /**
-     * 商品代码
+     * 商品内部代码
      */
     private String internalCode;
 }

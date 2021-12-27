@@ -1,6 +1,5 @@
 package com.scaffolding.pojo.vo;
 
-import com.scaffolding.global.style.SpecialStyle;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,10 +30,6 @@ public class ButtonVO implements Serializable {
      * 排序
      */
     private Integer sort;
-    /**
-     * 样式
-     */
-    private SpecialStyle specialStyle;
     /**
      * 预留字段
      */
