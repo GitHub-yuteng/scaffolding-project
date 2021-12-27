@@ -1,5 +1,8 @@
 package com.scaffolding.service.order.model;
 
+import com.scaffolding.service.order.model.template.IOrderDetailAssembly;
+import com.scaffolding.service.order.model.template.IOrderListAssembly;
+
 /**
  * @Author: yt
  * @Date: 2021/06/18/15:25

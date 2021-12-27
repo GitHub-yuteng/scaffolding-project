@@ -1,4 +1,4 @@
-package com.scaffolding.service.order.model;
+package com.scaffolding.service.order.model.template;
 
 /**
  * @Author: yt

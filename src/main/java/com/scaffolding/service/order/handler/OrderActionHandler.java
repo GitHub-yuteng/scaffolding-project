@@ -1,4 +1,4 @@
-package com.scaffolding.service.order;
+package com.scaffolding.service.order.handler;
 
 import org.springframework.stereotype.Component;
 

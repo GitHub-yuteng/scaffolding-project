@@ -1,4 +1,4 @@
-package com.scaffolding.service.order.model;
+package com.scaffolding.service.order.model.template;
 
 /**
  * @Author: yt
@@ -6,4 +6,5 @@ package com.scaffolding.service.order.model;
  * @Description: 将需要组装的方法抽象
  */
 public interface IOrderDetailAssembly {
+
 }

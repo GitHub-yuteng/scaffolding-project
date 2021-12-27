@@ -51,7 +51,7 @@ public abstract class SpecialStyle {
      */
     private Boolean hasUnderLine;
     /**
-     * 动作 复制/等
+     * 动作 复制、等
      */
-    private Integer action;
+    private String action;
 }
