@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Desc
  */
 @RestController
-@RequestMapping(value = GlobalPathConstant.INTERCEPT_PATH + "/")
+@RequestMapping(value = GlobalPathConstant.INTERCEPT_PATH + GlobalPathConstant.MINE)
 public class MineController {
 
 

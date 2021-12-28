@@ -1,6 +1,5 @@
 package com.scaffolding.controller.extension.visit;
 
-import com.scaffolding.constant.GlobalConstant;
 import com.scaffolding.constant.path.GlobalPathConstant;
 import com.scaffolding.service.visit.TmVisitContext;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = GlobalPathConstant.INTERCEPT_PATH + GlobalConstant.VERSION_1 + GlobalPathConstant.VISIT_PATH)
+@RequestMapping(value = GlobalPathConstant.INTERCEPT_PATH + GlobalPathConstant.VERSION_1 + GlobalPathConstant.VISIT_PATH)
 public class TmVisitController {
 
     @Autowired

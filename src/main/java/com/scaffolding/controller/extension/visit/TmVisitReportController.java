@@ -1,6 +1,5 @@
 package com.scaffolding.controller.extension.visit;
 
-import com.scaffolding.constant.GlobalConstant;
 import com.scaffolding.constant.path.GlobalPathConstant;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping(value = GlobalPathConstant.INTERCEPT_PATH + GlobalConstant.VERSION_1 + GlobalPathConstant.VISIT_REPORT_PATH)
+@RequestMapping(value = GlobalPathConstant.INTERCEPT_PATH + GlobalPathConstant.VERSION_1 + GlobalPathConstant.VISIT_REPORT_PATH)
 public class TmVisitReportController {
 }
