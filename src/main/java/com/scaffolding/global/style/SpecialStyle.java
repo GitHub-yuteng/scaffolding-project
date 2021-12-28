@@ -1,23 +1,16 @@
 package com.scaffolding.global.style;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 /**
  * @Author: yt
  * @Date: 2021/06/24/9:43
  * @Description: 配合前端适配样式
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public abstract class SpecialStyle {
 
     /**
      * 字体大小
      */
-    private Integer size;
+    public Integer size;
     /**
      * 字体颜色
      */
@@ -54,4 +47,5 @@ public abstract class SpecialStyle {
      * 动作 复制、等
      */
     private String action;
+
 }
