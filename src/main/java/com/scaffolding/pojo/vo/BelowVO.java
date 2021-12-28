@@ -1,4 +1,4 @@
-package com.scaffolding.service.order.vo.detail;
+package com.scaffolding.pojo.vo;
 
 import com.scaffolding.global.style.SpecialStyle;
 import lombok.AllArgsConstructor;
@@ -18,13 +18,10 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderBelowVO implements Serializable {
+public class BelowVO implements Serializable {
 
     private static final long serialVersionUID = -53042655554134163L;
 
-    /**
-     * 订单详情下方信息  (订单编号/下单时间/支付方式等)
-     */
     private Integer belowKey;
     private String belowName;
     private String belowValve;
@@ -37,5 +34,7 @@ public class OrderBelowVO implements Serializable {
      * 排序
      */
     private Integer sort;
+
+    private String action;
 
 }
