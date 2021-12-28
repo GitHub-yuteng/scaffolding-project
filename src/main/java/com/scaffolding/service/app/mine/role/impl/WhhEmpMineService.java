@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 /**
  * @Description: TODO
  * @Author whh-yt
- * @Date 2021/12/28 11:36 上午
+ * @Date 2021/12/28 11:38 上午
  */
 @Service
-public class TmMineService extends MineService {
+public class WhhEmpMineService extends MineService {
 }
