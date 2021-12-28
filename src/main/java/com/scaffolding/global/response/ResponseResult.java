@@ -23,6 +23,13 @@ public class ResponseResult<T> implements Serializable {
         return responseResult;
     }
 
+    public static <T> ResponseResult<T> success(String message) {
+        ResponseResult<T> responseResult = new ResponseResult<T>();
+        responseResult.setStatus(ResponseStatusEnum.SUCCESS.getCode());
+        responseResult.setMessage(message);
+        return responseResult;
+    }
+
     public static <T> ResponseResult<T> success(T data) {
         ResponseResult<T> responseResult = new ResponseResult<T>();
         responseResult.setStatus(ResponseStatusEnum.SUCCESS.getCode());
@@ -51,6 +58,13 @@ public class ResponseResult<T> implements Serializable {
         responseResult.setStatus(ResponseStatusEnum.FAIL.getCode());
         responseResult.setMessage(ResponseStatusEnum.FAIL.getDescribe());
         responseResult.setData(data);
+        return responseResult;
+    }
+
+    public static <T> ResponseResult<T> fail(String message) {
+        ResponseResult<T> responseResult = new ResponseResult<>();
+        responseResult.setStatus(ResponseStatusEnum.FAIL.getCode());
+        responseResult.setMessage(message);
         return responseResult;
     }
 

@@ -1,10 +1,8 @@
 package com.scaffolding.controller.extension.visit.req;
 
-import com.scaffolding.auth.UserInfo;
 import com.scaffolding.pojo.req.AddressReq;
 import lombok.Data;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
@@ -72,10 +70,4 @@ public class VisitClockReq implements Serializable {
      * 地图类型(高德地图：amap,腾讯地图：TencentMap)
      */
     private String mapType;
-
-    /**
-     * 当前请求用户信息
-     */
-    @Valid
-    private UserInfo userInfo;
 }

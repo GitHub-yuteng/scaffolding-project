@@ -9,7 +9,7 @@ import com.scaffolding.service.visit.vo.VisitVO;
  * @author whh-yt
  * @Date 2021/8/26
  */
-public interface ITmVisitClock {
+public interface IVisitClock {
 
     /**
      * 到店打卡
@@ -24,5 +24,6 @@ public interface ITmVisitClock {
      * @param userInfo
      */
     VisitVO leaveClock(VisitClockReq visitClockReq,UserInfo userInfo);
+
 
 }
