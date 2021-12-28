@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author whh-yt
+ * @author yt
  */
 @Configuration
 public class SensitiveStrategyConfig {

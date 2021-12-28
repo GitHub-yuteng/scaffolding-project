@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
- * @author whh-yt
+ * @author yt
  */
 @Data
 public class VisitDetailReq implements Serializable {

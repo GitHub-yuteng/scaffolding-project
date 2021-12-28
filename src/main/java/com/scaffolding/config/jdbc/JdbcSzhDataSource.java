@@ -18,10 +18,10 @@ import org.springframework.transaction.support.TransactionTemplate;
 import javax.sql.DataSource;
 
 /**
- * @author whh-yt
+ * @author yt
  */
 @Configuration
-@MapperScan(basePackages = "com.whhim.szh.mapper.dao.szh",sqlSessionFactoryRef = "szh_default_sqlSessionFactory")
+@MapperScan(basePackages = "mapper.dao.szh",sqlSessionFactoryRef = "szh_default_sqlSessionFactory")
 public class JdbcSzhDataSource {
 
     @Value("${szh.Hikar.jdbcUrl}")

@@ -6,7 +6,7 @@ import com.scaffolding.controller.extension.visit.req.VisitClockReq;
 import com.scaffolding.service.visit.vo.VisitVO;
 
 /**
- * @author whh-yt
+ * @author yt
  * @Date 2021/8/26
  */
 public interface IVisitClock {

@@ -3,7 +3,7 @@ package com.scaffolding.exception;
 import java.io.Serializable;
 
 /**
- * @author whh-yt
+ * @author yt
  * @Date 2021/10/11
  * @Desc
  */

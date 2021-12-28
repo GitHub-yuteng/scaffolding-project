@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 /**
- * @author whh-yt
+ * @author yt
  */
 public class MysqlGeneratorUtil {
 

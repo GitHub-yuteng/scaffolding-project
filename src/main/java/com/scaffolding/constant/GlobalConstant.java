@@ -1,7 +1,7 @@
 package com.scaffolding.constant;
 
 /**
- * @author whh-yt
+ * @author yt
  * @Auther YT
  * @Date 2021/8/17
  * @Dec 全局常量池

@@ -6,7 +6,7 @@ import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.stereotype.Component;
 
 /**
- * @author whh-yt
+ * @author yt
  * 自定义加密
  */
 @Component

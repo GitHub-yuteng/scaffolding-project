@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 信息脱敏工具类
- * @author whh-yt
+ * @author yt
  */
 public class PrivacyDimmerUtil {
 

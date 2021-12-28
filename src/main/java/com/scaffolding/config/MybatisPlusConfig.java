@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author whh-yt
+ * @author yt
  */
 @Configuration
 @MapperScan("com.scaffolding.mapper*")

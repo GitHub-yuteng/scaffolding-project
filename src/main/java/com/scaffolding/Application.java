@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author whh-yt
+ * @author yt
  */
 @SpringBootApplication
 @MapperScan("com.scaffolding.mapper")
