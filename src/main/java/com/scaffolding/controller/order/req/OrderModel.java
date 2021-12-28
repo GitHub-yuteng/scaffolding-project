@@ -11,7 +11,8 @@ import lombok.Data;
 public class OrderModel {
 
     /**
-     * C-
+     * 卖 1x
+     * 买 2x
      */
     private String orderModel;
 }
