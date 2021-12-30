@@ -5,7 +5,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -27,26 +26,9 @@ public class JdbcSzhDataSource {
     public final static String SZH_DEFAULT_TRANSACTION_MANAGER  = "szh_default_transactionManager";
     public final static String SZH_DEFAULT_TRANSACTION_TEMPLATE = "szh_default_transactionTemplate";
 
-    @Value("${szh.Hikar.jdbcUrl}")
-    private String jdbcUrl;
-    @Value("${szh.Hikar.username}")
-    private String username;
-    @Value("${szh.Hikar.password}")
-    private String password;
-    @Value("${szh.Hikar.readOnly}")
-    private boolean readOnly;
-    @Value("${szh.Hikar.connectionTimeout}")
-    private long connectionTimeout;
-    @Value("${szh.Hikar.idleTimeout}")
-    private long idleTimeout;
-    @Value("${szh.Hikar.maxLifetime}")
-    private long maxLifetime;
-    @Value("${szh.Hikar.maximumPoolSize}")
-    private int maximumPoolSize;
-    @Value("${szh.Hikar.connectionTestQuery}")
-    private String connectionTestQuery;
-    @Value("${szh.Hikar.leakDetectionThreshold}")
-    private long leakDetectionThreshold;
+    private String jdbcUrl = "jdbc:mysql://101.33.241.122:3306/uc?serverTimezone=UTC";
+    private String username = "root";
+    private String password = "123456";
 
 
     /**
