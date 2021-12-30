@@ -31,6 +31,7 @@ public class MineController {
 
     /**
      * Mine
+     *
      * @return
      */
     @PostMapping(value = "/detail")

@@ -1,5 +1,6 @@
 package com.scaffolding.global.interceptor;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -27,7 +28,10 @@ public class RequestInterceptor implements HandlerInterceptor {
                 token = request.getHeader(key);
             }
         }
-
+        if(StringUtils.isBlank(token)){
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return false;
+        }
         return true;
     }
 }

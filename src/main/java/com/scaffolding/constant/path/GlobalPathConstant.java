@@ -9,8 +9,8 @@ public class GlobalPathConstant {
 
 
     public static final String IM           = "IM";
-    public static final String VERSION_1    = "v1";
-    public static final String VERSION_2    = "v2";
+    public static final String VERSION_1    = "/v1";
+    public static final String VERSION_2    = "/v2";
 
     /**
      * 需要拦截获取用户信息前缀
