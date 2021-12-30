@@ -21,8 +21,11 @@ import javax.sql.DataSource;
  * @author yt
  */
 @Configuration
-@MapperScan(basePackages = "mapper.dao.szh",sqlSessionFactoryRef = "szh_default_sqlSessionFactory")
+@MapperScan(basePackages = "mapper.dao.szh", sqlSessionFactoryRef = "szh_default_sqlSessionFactory")
 public class JdbcSzhDataSource {
+
+    public final static String SZH_DEFAULT_TRANSACTION_MANAGER  = "szh_default_transactionManager";
+    public final static String SZH_DEFAULT_TRANSACTION_TEMPLATE = "szh_default_transactionTemplate";
 
     @Value("${szh.Hikar.jdbcUrl}")
     private String jdbcUrl;
@@ -51,7 +54,7 @@ public class JdbcSzhDataSource {
      *
      * @return
      */
-    @Bean(name="szh_default_dataSource")
+    @Bean(name = "szh_default_dataSource")
     public DataSource lottery_default_dataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setName("szh_default_dataSource");
@@ -63,9 +66,9 @@ public class JdbcSzhDataSource {
         dataSource.setMaxActive(100);
         dataSource.setMinIdle(50);
         dataSource.setTestWhileIdle(true);
-        try{
+        try {
             dataSource.setFilters("stat");
-        }catch (Exception e){
+        } catch (Exception e) {
         }
         dataSource.setMaxWait(60000);
         dataSource.setTimeBetweenEvictionRunsMillis(60000);
@@ -88,13 +91,13 @@ public class JdbcSzhDataSource {
         return bean.getObject();
     }
 
-    @Bean(name = "szh_default_transactionManager")
+    @Bean(name = JdbcSzhDataSource.SZH_DEFAULT_TRANSACTION_MANAGER)
     @Primary
     public DataSourceTransactionManager testTransactionManager() {
         return new DataSourceTransactionManager(lottery_default_dataSource());
     }
 
-    @Bean("szh_default_transactionTemplate")
+    @Bean(value = JdbcSzhDataSource.SZH_DEFAULT_TRANSACTION_TEMPLATE)
     public TransactionTemplate transactionTemplate() {
         TransactionTemplate transactionTemplate = new TransactionTemplate();
         transactionTemplate.setTransactionManager(testTransactionManager());

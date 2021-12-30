@@ -1,6 +1,5 @@
 package com.scaffolding.controller.extension.visit;
 
-import com.scaffolding.auth.UserInfo;
 import com.scaffolding.constant.path.GlobalPathConstant;
 import com.scaffolding.controller.extension.visit.req.VisitClockReq;
 import com.scaffolding.exception.AppException;

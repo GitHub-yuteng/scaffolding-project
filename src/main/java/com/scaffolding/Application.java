@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author yt
  */
 @SpringBootApplication
-@MapperScan("com.scaffolding.mapper")
+@MapperScan(basePackages = "com.scaffolding.mapper")
 public class Application {
 
     public static void main(String[] args) {

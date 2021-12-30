@@ -7,4 +7,6 @@ package com.scaffolding.service.app.mine.role.template;
  */
 public interface IMineAssembly {
 
+    void assemblyUserInfo();
+
 }

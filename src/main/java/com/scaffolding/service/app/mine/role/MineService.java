@@ -19,5 +19,8 @@ public class MineService extends AbstractMineTemplate implements IMineAssembly {
     @Qualifier(value = AsyncThreadPoolExecutor.COMMON_THREAD_POOL_EXECUTOR)
     protected ThreadPoolTaskExecutor executor;
 
+    @Override
+    public void assemblyUserInfo() {
 
+    }
 }
