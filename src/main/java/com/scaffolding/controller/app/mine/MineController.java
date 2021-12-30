@@ -7,6 +7,7 @@ import com.scaffolding.global.response.ResponseResult;
 import com.scaffolding.pojo.req.EmptyReq;
 import com.scaffolding.service.app.mine.MineInfoContext;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
+import com.scaffolding.util.JacksonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class MineController {
     @PostMapping(value = "/detail")
     public ResponseResult<MineInfoVO> queryMineInfo(@RequestBody EmptyReq emptyReq) {
         try {
-            log.info("MineController#queryMineInfo: Mine, param:{}", emptyReq.toString());
+            log.info("MineController#queryMineInfo: Mine, param:{}", JacksonUtil.toJsonString(emptyReq));
             MineInfoVO result = mineInfoContext.queryMineInfo(emptyReq);
             return ResponseResult.success(result);
         } catch (AppException e) {
