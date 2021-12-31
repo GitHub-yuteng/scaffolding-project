@@ -24,4 +24,8 @@ public class MineInfoVO implements Serializable {
     private CouponsVO couponsVO;
     private PointVO pointVO;
     private List<BelowVO> belows;
+    /**
+     * 字典表存：样式，让前端渲染显示不同的样式
+     */
+    private String style;
 }

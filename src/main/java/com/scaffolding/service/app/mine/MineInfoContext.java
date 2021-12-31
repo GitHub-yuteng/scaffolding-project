@@ -1,7 +1,9 @@
 package com.scaffolding.service.app.mine;
 
+import com.scaffolding.auth.UserInfo;
 import com.scaffolding.exception.AppException;
 import com.scaffolding.pojo.req.StringReq;
+import com.scaffolding.pojo.vo.StatusCountVO;
 import com.scaffolding.service.app.mine.constant.MineConstant;
 import com.scaffolding.service.app.mine.enums.RoleClazzEnum;
 import com.scaffolding.service.app.mine.role.IMineRoleStrategy;
@@ -12,6 +14,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author: yt
@@ -30,9 +35,10 @@ public class MineInfoContext {
      * 我的Mine
      *
      * @param stringReq
+     * @param userInfo
      * @return
      */
-    public MineInfoVO queryMineInfo(StringReq stringReq) {
+    public MineInfoVO queryMineInfo(StringReq stringReq, UserInfo userInfo) {
         if (StringUtils.isBlank(stringReq.getCode())) {
             log.info("MineInfoContext#queryMineInfo, param:{}", JacksonUtil.toJsonString(stringReq));
             throw new AppException(MineConstant.CODE_IS_ERROR);
@@ -41,5 +47,15 @@ public class MineInfoContext {
         assert roleClazzEnum != null;
         IMineRoleStrategy mineRoleStrategy = mineRoleFactory.getMineRoleStrategy(roleClazzEnum.getTypeName());
         return mineRoleStrategy.queryMineInfo();
+    }
+
+    /**
+     * 订单对应的数量
+     * @param stringReq
+     * @param userInfo
+     * @return
+     */
+    public List<StatusCountVO> listOrderCellCount(StringReq stringReq, UserInfo userInfo) {
+        return new ArrayList<>();
     }
 }

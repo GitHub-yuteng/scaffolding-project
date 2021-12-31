@@ -12,6 +12,11 @@ import java.io.Serializable;
 @Data
 public class UserInfo implements Serializable {
 
+    private static final long serialVersionUID = -7812362499262764763L;
+
     private String id;
-    private String name;
+    private String username;
+    private String icon;
+    private String token;
+
 }

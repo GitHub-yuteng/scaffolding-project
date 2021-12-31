@@ -9,7 +9,7 @@ package com.scaffolding.constant;
 public class GlobalConstant {
 
     public static final String USER_IS_NULL                   = "请重新登录";
-    public static final String ORDER_ERROR_RETURN             = "网络开小差，请稍后重试";
+    public static final String NETWORK_ERROR                  = "网络开小差，请稍后重试";
 
 
 }
