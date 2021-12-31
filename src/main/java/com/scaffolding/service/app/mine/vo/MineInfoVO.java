@@ -16,6 +16,8 @@ import java.util.List;
 @Data
 public class MineInfoVO implements Serializable {
 
+    private static final long serialVersionUID = -6904277034804004007L;
+
     private UserInfo userInfo;
     private RoleSelectVO roleSelectVO;
     private List<StatusCountVO> orderCells;

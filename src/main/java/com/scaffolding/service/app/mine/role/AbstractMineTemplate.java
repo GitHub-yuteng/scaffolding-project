@@ -13,9 +13,19 @@ public abstract class AbstractMineTemplate implements IMineAssembly {
 
     /**
      * 模版方法，final 不让子类覆盖
-     *
      */
     protected final void defaultTemplate(MineInfoVO mineInfo, MineParamDTO mineParam) {
-        assemblyUserInfo();
+        assemblyUserInfo(mineInfo, mineParam);
+        assemblyOrderCells(mineInfo, mineParam);
+        assemblyTools(mineInfo, mineParam);
+    }
+
+
+    /**
+     * 模版方法，final 不让子类覆盖
+     */
+    protected final void tmMineTemplate(MineInfoVO mineInfo, MineParamDTO mineParam) {
+        defaultTemplate(mineInfo, mineParam);
+
     }
 }
