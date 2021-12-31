@@ -22,7 +22,7 @@ public class AppException extends RuntimeException implements Serializable {
 
     public AppException(String string) {
         super(string);
-        this.errorCode = 0;
+        this.errorCode = AppExceptionEnum.SYSTEM_ERROR.getCode();
         this.errorMessage = string;
     }
 }

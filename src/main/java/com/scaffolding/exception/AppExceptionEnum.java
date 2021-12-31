@@ -15,7 +15,7 @@ public enum AppExceptionEnum {
     /**
      *
      */
-    ALL           (10001,"系统报错");
+    SYSTEM_ERROR            (10001,"系统报错");
 
 
     private int code;
