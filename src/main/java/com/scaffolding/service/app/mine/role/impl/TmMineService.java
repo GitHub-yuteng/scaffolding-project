@@ -1,6 +1,9 @@
 package com.scaffolding.service.app.mine.role.impl;
 
 import com.scaffolding.service.app.mine.role.MineService;
+import com.scaffolding.service.app.mine.role.impl.param.MineParam;
+import com.scaffolding.service.app.mine.role.impl.param.TmMineParam;
+import com.scaffolding.service.app.mine.vo.MineInfoVO;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,4 +13,24 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TmMineService extends MineService {
+
+    @Override
+    public MineInfoVO queryMineInfo() {
+        return super.queryMineInfo();
+    }
+
+    @Override
+    public <T extends MineParam> void assemblyUserInfo(MineInfoVO mineInfo, T mineParam) {
+        TmMineParam tmMineParam = (TmMineParam) mineParam;
+    }
+
+    @Override
+    public <T extends MineParam> void assemblyOrderCells(MineInfoVO mineInfo, T mineParam) {
+    }
+
+    @Override
+    public <T extends MineParam> void assemblyTools(MineInfoVO mineInfo, T mineParam) {
+
+    }
+
 }

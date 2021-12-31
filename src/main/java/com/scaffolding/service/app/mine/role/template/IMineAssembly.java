@@ -1,6 +1,6 @@
 package com.scaffolding.service.app.mine.role.template;
 
-import com.scaffolding.service.app.mine.dto.MineParamDTO;
+import com.scaffolding.service.app.mine.role.impl.param.MineParam;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
 
 /**
@@ -16,7 +16,7 @@ public interface IMineAssembly {
      * @param mineInfo
      * @param mineParam
      */
-    void assemblyUserInfo(MineInfoVO mineInfo, MineParamDTO mineParam);
+    <T extends MineParam> void assemblyUserInfo(MineInfoVO mineInfo, T mineParam);
 
     /**
      * 组装订单cell
@@ -24,13 +24,14 @@ public interface IMineAssembly {
      * @param mineInfo
      * @param mineParam
      */
-    void assemblyOrderCells(MineInfoVO mineInfo, MineParamDTO mineParam);
+    <T extends MineParam> void assemblyOrderCells(MineInfoVO mineInfo, T mineParam);
 
     /**
      * 组装我的工具
+     *
      * @param mineInfo
      * @param mineParam
      */
-    void assemblyTools(MineInfoVO mineInfo, MineParamDTO mineParam);
+    <T extends MineParam> void assemblyTools(MineInfoVO mineInfo, T mineParam);
 
 }

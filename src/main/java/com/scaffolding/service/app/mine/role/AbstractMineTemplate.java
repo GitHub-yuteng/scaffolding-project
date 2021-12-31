@@ -1,6 +1,6 @@
 package com.scaffolding.service.app.mine.role;
 
-import com.scaffolding.service.app.mine.dto.MineParamDTO;
+import com.scaffolding.service.app.mine.role.impl.param.MineParam;
 import com.scaffolding.service.app.mine.role.template.IMineAssembly;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
 
@@ -14,7 +14,7 @@ public abstract class AbstractMineTemplate implements IMineAssembly {
     /**
      * 模版方法，final 不让子类覆盖
      */
-    protected final void defaultTemplate(MineInfoVO mineInfo, MineParamDTO mineParam) {
+    protected final <T extends MineParam> void defaultTemplate(MineInfoVO mineInfo, T mineParam) {
         assemblyUserInfo(mineInfo, mineParam);
         assemblyOrderCells(mineInfo, mineParam);
         assemblyTools(mineInfo, mineParam);
@@ -24,8 +24,7 @@ public abstract class AbstractMineTemplate implements IMineAssembly {
     /**
      * 模版方法，final 不让子类覆盖
      */
-    protected final void tmMineTemplate(MineInfoVO mineInfo, MineParamDTO mineParam) {
+    protected final <T extends MineParam> void tmMineTemplate(MineInfoVO mineInfo, T mineParam) {
         defaultTemplate(mineInfo, mineParam);
-
     }
 }
