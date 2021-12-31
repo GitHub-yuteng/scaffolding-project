@@ -1,7 +1,6 @@
-package com.scaffolding.service.app.mine.role;
+package com.scaffolding.service.app.mine.role.template;
 
 import com.scaffolding.service.app.mine.role.impl.param.MineParam;
-import com.scaffolding.service.app.mine.role.template.IMineFunctionAssembly;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
 
 /**

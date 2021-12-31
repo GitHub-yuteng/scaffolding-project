@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 public class OrderInfoContext {
 
 
-
     /**
      * 买方 APP我的 订单Cell
      *

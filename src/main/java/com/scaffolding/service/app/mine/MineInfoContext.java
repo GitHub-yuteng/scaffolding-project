@@ -8,6 +8,7 @@ import com.scaffolding.service.app.mine.constant.MineConstant;
 import com.scaffolding.service.app.mine.enums.RoleClazzEnum;
 import com.scaffolding.service.app.mine.role.IMineRoleStrategy;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
+import com.scaffolding.service.order.OrderInfoContext;
 import com.scaffolding.util.JacksonUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -30,6 +31,8 @@ public class MineInfoContext {
 
     @Autowired
     private MineRoleFactory mineRoleFactory;
+    @Autowired
+    private OrderInfoContext orderInfoContext;
 
     /**
      * 我的Mine

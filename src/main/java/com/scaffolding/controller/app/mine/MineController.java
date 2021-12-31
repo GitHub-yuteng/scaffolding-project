@@ -66,14 +66,14 @@ public class MineController {
     @PostMapping(value = "/order-cell-count")
     public ResponseResult<List<StatusCountVO>> queryOrderCellCount(@RequestBody @Valid StringReq stringReq, HttpServletResponse response) {
         try {
-            log.info("OrderInfoController#queryHomeOrderCount: 获取对应状态的订单数, param:{}", JacksonUtil.toJsonString(stringReq));
+            log.info("OrderInfoController#queryOrderCellCount: 获取对应状态的订单数, param:{}", JacksonUtil.toJsonString(stringReq));
             UserInfo userInfo = Authentication.getUserInfo();
             List<StatusCountVO> orderStatusCountVO = mineInfoContext.listOrderCellCount(stringReq, userInfo);
             return ResponseResult.success(orderStatusCountVO);
         } catch (AppException e) {
             return ResponseResult.fail(e.getMessage());
         } catch (Exception e) {
-            log.error("OrderInfoController#queryHomeOrderCount, 获取对应状态的订单数, param:{}, Exception:{}", JacksonUtil.toJsonString(stringReq), e.getMessage());
+            log.error("OrderInfoController#queryOrderCellCount, 获取对应状态的订单数, param:{}, Exception:{}", JacksonUtil.toJsonString(stringReq), e.getMessage());
             return ResponseResult.fail(GlobalConstant.NETWORK_ERROR);
         }
     }

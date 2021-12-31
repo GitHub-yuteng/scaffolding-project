@@ -3,6 +3,7 @@ package com.scaffolding.service.app.mine.role;
 import com.scaffolding.config.executor.AsyncThreadPoolExecutor;
 import com.scaffolding.pojo.vo.CellVO;
 import com.scaffolding.service.app.mine.role.impl.param.MineParam;
+import com.scaffolding.service.app.mine.role.template.AbstractMineTemplate;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
 import com.scaffolding.service.order.OrderInfoContext;
 import org.springframework.beans.factory.annotation.Autowired;
