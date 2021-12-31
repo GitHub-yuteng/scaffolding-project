@@ -1,7 +1,7 @@
 package com.scaffolding.service.app.mine.role;
 
 import com.scaffolding.service.app.mine.role.impl.param.MineParam;
-import com.scaffolding.service.app.mine.role.template.IMineAssembly;
+import com.scaffolding.service.app.mine.role.template.IMineFunctionAssembly;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
 
 /**
@@ -9,7 +9,7 @@ import com.scaffolding.service.app.mine.vo.MineInfoVO;
  * @Author yt
  * @Date 2021/12/28 11:40 上午
  */
-public abstract class AbstractMineTemplate implements IMineAssembly {
+public abstract class AbstractMineTemplate implements IMineFunctionAssembly {
 
     /**
      * 模版方法，final 不让子类覆盖
@@ -24,8 +24,7 @@ public abstract class AbstractMineTemplate implements IMineAssembly {
     /**
      * 模版方法，final 不让子类覆盖
      */
-    protected final <T extends MineParam> void tmMineTemplate(MineInfoVO mineInfo, T mineParam) {
+    protected final <T extends MineParam> void templateTmMine(MineInfoVO mineInfo, T mineParam) {
         defaultTemplate(mineInfo, mineParam);
-
     }
 }

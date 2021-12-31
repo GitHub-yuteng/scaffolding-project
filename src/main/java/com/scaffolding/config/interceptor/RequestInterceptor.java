@@ -1,4 +1,4 @@
-package com.scaffolding.global.interceptor;
+package com.scaffolding.config.interceptor;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.annotation.Order;
@@ -32,6 +32,8 @@ public class RequestInterceptor implements HandlerInterceptor {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return false;
         }
+
+
         return true;
     }
 }

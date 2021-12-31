@@ -15,21 +15,22 @@ import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 
 /**
  * @author yt
  */
 @Configuration
-@MapperScan(basePackages = "mapper.dao.szh", sqlSessionFactoryRef = "szh_default_sqlSessionFactory")
+@MapperScan(basePackages = {"mapper.dao.szh"}, sqlSessionFactoryRef = "szh_default_sqlSessionFactory")
+@Primary
 public class JdbcSzhDataSource {
 
-    public final static String SZH_DEFAULT_TRANSACTION_MANAGER  = "szh_default_transactionManager";
+    public final static String SZH_DEFAULT_TRANSACTION_MANAGER = "szh_default_transactionManager";
     public final static String SZH_DEFAULT_TRANSACTION_TEMPLATE = "szh_default_transactionTemplate";
 
     private String jdbcUrl = "jdbc:mysql://101.33.241.122:3306/uc?serverTimezone=UTC";
     private String username = "root";
     private String password = "123456";
-
 
     /**
      * Hikar连接池的DataSource
@@ -37,7 +38,7 @@ public class JdbcSzhDataSource {
      * @return
      */
     @Bean(name = "szh_default_dataSource")
-    public DataSource lottery_default_dataSource() {
+    public DataSource lotteryDefaultDataSource() throws SQLException {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setName("szh_default_dataSource");
         dataSource.setDriverClassName("org.postgresql.Driver");
@@ -48,10 +49,7 @@ public class JdbcSzhDataSource {
         dataSource.setMaxActive(100);
         dataSource.setMinIdle(50);
         dataSource.setTestWhileIdle(true);
-        try {
-            dataSource.setFilters("stat");
-        } catch (Exception e) {
-        }
+        dataSource.setFilters("stat");
         dataSource.setMaxWait(60000);
         dataSource.setTimeBetweenEvictionRunsMillis(60000);
         dataSource.setMinEvictableIdleTimeMillis(300000);
@@ -68,19 +66,19 @@ public class JdbcSzhDataSource {
     @Primary
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(lottery_default_dataSource());
+        bean.setDataSource(lotteryDefaultDataSource());
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:**/mapper/szh/**/*.xml"));
         return bean.getObject();
     }
 
     @Bean(name = JdbcSzhDataSource.SZH_DEFAULT_TRANSACTION_MANAGER)
     @Primary
-    public DataSourceTransactionManager testTransactionManager() {
-        return new DataSourceTransactionManager(lottery_default_dataSource());
+    public DataSourceTransactionManager testTransactionManager() throws SQLException {
+        return new DataSourceTransactionManager(lotteryDefaultDataSource());
     }
 
     @Bean(value = JdbcSzhDataSource.SZH_DEFAULT_TRANSACTION_TEMPLATE)
-    public TransactionTemplate transactionTemplate() {
+    public TransactionTemplate transactionTemplate() throws SQLException {
         TransactionTemplate transactionTemplate = new TransactionTemplate();
         transactionTemplate.setTransactionManager(testTransactionManager());
         //PROPAGATION_REQUIRED：如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。这是最常见的选择。
@@ -91,9 +89,9 @@ public class JdbcSzhDataSource {
     }
 
     @Bean("szh_default_jdbcTemplate")
-    public JdbcTemplate jdbcTemplate() {
+    public JdbcTemplate jdbcTemplate() throws SQLException {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        jdbcTemplate.setDataSource(lottery_default_dataSource());
+        jdbcTemplate.setDataSource(lotteryDefaultDataSource());
         return jdbcTemplate;
     }
 

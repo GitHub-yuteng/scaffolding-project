@@ -1,12 +1,16 @@
 package com.scaffolding.service.app.mine.role;
 
 import com.scaffolding.config.executor.AsyncThreadPoolExecutor;
+import com.scaffolding.pojo.vo.CellVO;
 import com.scaffolding.service.app.mine.role.impl.param.MineParam;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
+import com.scaffolding.service.order.OrderInfoContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Description: TODO
@@ -15,6 +19,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class MineService extends AbstractMineTemplate implements IMineRoleStrategy {
+
+    @Autowired
+    private OrderInfoContext orderInfoContext;
 
     @Autowired
     @Qualifier(value = AsyncThreadPoolExecutor.COMMON_THREAD_POOL_EXECUTOR)
@@ -37,7 +44,8 @@ public class MineService extends AbstractMineTemplate implements IMineRoleStrate
 
     @Override
     public <T extends MineParam> void assemblyOrderCells(MineInfoVO mineInfo, T mineParam) {
-
+        List<CellVO> orderCellList = orderInfoContext.listMineOrderCellList();
+        mineInfo.setOrderCells(orderCellList);
     }
 
     @Override

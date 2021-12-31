@@ -2,7 +2,7 @@ package com.scaffolding.service.app.mine.vo;
 
 import com.scaffolding.auth.UserInfo;
 import com.scaffolding.pojo.vo.BelowVO;
-import com.scaffolding.pojo.vo.StatusCountVO;
+import com.scaffolding.pojo.vo.CellVO;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -20,7 +20,7 @@ public class MineInfoVO implements Serializable {
 
     private UserInfo userInfo;
     private RoleSelectVO roleSelectVO;
-    private List<StatusCountVO> orderCells;
+    private List<CellVO> orderCells;
     private CouponsVO couponsVO;
     private PointVO pointVO;
     private List<BelowVO> belows;

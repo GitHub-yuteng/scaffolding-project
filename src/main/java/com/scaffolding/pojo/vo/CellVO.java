@@ -1,4 +1,4 @@
-package com.scaffolding.service.order.vo;
+package com.scaffolding.pojo.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,12 +14,13 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderCellVO implements Serializable {
+public class CellVO implements Serializable {
 
     private static final long serialVersionUID = -4920691674650039117L;
 
     private Integer type;
     private String typeName;
     private String iconPath;
+    private Boolean disable;
     private Integer sort;
 }

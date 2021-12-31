@@ -8,7 +8,7 @@ import com.scaffolding.service.app.mine.vo.MineInfoVO;
  * @Date: 2021/06/18/14:58
  * @Description: 将需要组装的方法抽象
  */
-public interface IMineAssembly {
+public interface IMineFunctionAssembly {
 
     /**
      * 组装用户信息
