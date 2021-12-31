@@ -4,7 +4,7 @@ import com.scaffolding.constant.GlobalConstant;
 import com.scaffolding.constant.path.GlobalPathConstant;
 import com.scaffolding.exception.AppException;
 import com.scaffolding.global.response.ResponseResult;
-import com.scaffolding.pojo.req.EmptyReq;
+import com.scaffolding.pojo.req.StringReq;
 import com.scaffolding.service.app.mine.MineInfoContext;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
 import com.scaffolding.util.JacksonUtil;
@@ -36,16 +36,16 @@ public class MineController {
      * @return
      */
     @PostMapping(value = "/detail")
-    public ResponseResult<MineInfoVO> queryMineInfo(@RequestBody EmptyReq emptyReq) {
+    public ResponseResult<MineInfoVO> queryMineInfo(@RequestBody StringReq stringReq) {
         try {
-            log.info("MineController#queryMineInfo: Mine, param:{}", JacksonUtil.toJsonString(emptyReq));
-            MineInfoVO result = mineInfoContext.queryMineInfo(emptyReq);
+            log.info("MineController#queryMineInfo: Mine, param:{}", JacksonUtil.toJsonString(stringReq));
+            MineInfoVO result = mineInfoContext.queryMineInfo(stringReq);
             return ResponseResult.success(result);
         } catch (AppException e) {
             return ResponseResult.fail(e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
-            log.error("MineController#queryMineInfo, Mine, param:{}, Exception:{}", emptyReq.toString(), e.getMessage());
+            log.error("MineController#queryMineInfo, Mine, param:{}, Exception:{}", stringReq.toString(), e.getMessage());
             return ResponseResult.fail(GlobalConstant.ORDER_ERROR_RETURN);
         }
     }

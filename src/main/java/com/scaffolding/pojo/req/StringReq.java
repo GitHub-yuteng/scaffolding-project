@@ -12,5 +12,7 @@ import java.io.Serializable;
 @Data
 public class StringReq implements Serializable {
 
+    private static final long serialVersionUID = -7094545048883940378L;
+
     private String code;
 }

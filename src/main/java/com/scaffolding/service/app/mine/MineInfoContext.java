@@ -1,7 +1,12 @@
 package com.scaffolding.service.app.mine;
 
-import com.scaffolding.pojo.req.EmptyReq;
+import com.scaffolding.exception.AppException;
+import com.scaffolding.pojo.req.StringReq;
+import com.scaffolding.service.app.mine.constant.MineConstant;
+import com.scaffolding.service.app.mine.enums.RoleClazzEnum;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
+import com.scaffolding.service.order.model.IOrderModelStrategy;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +23,16 @@ public class MineInfoContext {
 
     /**
      * 我的Mine
-     * @param emptyReq
+     * @param stringReq
      * @return
      */
-    public MineInfoVO queryMineInfo(EmptyReq emptyReq) {
-        MineInfoVO mineInfoVO = new MineInfoVO();
-        return mineInfoVO;
+    public MineInfoVO queryMineInfo(StringReq stringReq) {
+        if(StringUtils.isBlank(stringReq.getCode())){
+            throw new AppException(MineConstant.CODE_IS_ERROR);
+        }
+        RoleClazzEnum roleClazzEnum = RoleClazzEnum.getEnumByType(stringReq.getCode());
+        assert roleClazzEnum != null;
+        IOrderModelStrategy orderModelStrategy = roleFactory.getOrderModelStrategy(roleClazzEnum.getTypeName());
+        return orderModelStrategy.queryMineInfo();
     }
 }

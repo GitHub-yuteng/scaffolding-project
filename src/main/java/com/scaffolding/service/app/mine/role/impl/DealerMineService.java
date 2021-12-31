@@ -9,5 +9,5 @@ import org.springframework.stereotype.Service;
  * @Date 2021/12/28 11:37 上午
  */
 @Service
-public class DealersMineService extends MineService {
+public class DealerMineService extends MineService {
 }
