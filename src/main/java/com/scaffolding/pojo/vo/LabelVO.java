@@ -12,6 +12,8 @@ import java.io.Serializable;
 @Data
 public class LabelVO implements Serializable {
 
+    private static final long serialVersionUID = -1199284356484877965L;
+
     private Integer labelType;
     private String labelDesc;
 }

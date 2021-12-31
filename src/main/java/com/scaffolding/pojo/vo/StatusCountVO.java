@@ -12,6 +12,7 @@ import java.io.Serializable;
 @Data
 public class StatusCountVO implements Serializable {
 
+    private static final long serialVersionUID = 2884994434690247601L;
     private Integer type;
     private Integer count;
 }

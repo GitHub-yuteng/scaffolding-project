@@ -16,7 +16,10 @@ public class TmMineService extends MineService {
 
     @Override
     public MineInfoVO queryMineInfo() {
-        return super.queryMineInfo();
+        MineInfoVO mineInfoVO = new MineInfoVO();
+        TmMineParam tmMineParam = new TmMineParam();
+
+        return mineInfoVO;
     }
 
     @Override

@@ -26,5 +26,6 @@ public abstract class AbstractMineTemplate implements IMineAssembly {
      */
     protected final <T extends MineParam> void tmMineTemplate(MineInfoVO mineInfo, T mineParam) {
         defaultTemplate(mineInfo, mineParam);
+
     }
 }

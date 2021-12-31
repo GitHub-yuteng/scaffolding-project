@@ -13,4 +13,5 @@ import java.io.Serializable;
 public class MineParam implements Serializable {
 
     private static final long serialVersionUID = -6335392436123356104L;
+
 }
