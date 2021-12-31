@@ -63,7 +63,7 @@ public class MineController {
      *
      * @return
      */
-    @PostMapping(value = "/order-cell-count")
+    @PostMapping(value = "/orderCellCount")
     public ResponseResult<List<StatusCountVO>> queryOrderCellCount(@RequestBody @Valid StringReq stringReq, HttpServletResponse response) {
         try {
             log.info("OrderInfoController#queryOrderCellCount: 获取对应状态的订单数, param:{}", JacksonUtil.toJsonString(stringReq));
