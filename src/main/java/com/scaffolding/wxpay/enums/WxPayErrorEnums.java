@@ -24,18 +24,18 @@ public interface WxPayErrorEnums {
         RULELIMIT               (403, "RULELIMIT",              "业务规则限制"),
         PARAM_ERROR             (400, "PARAM_ERROR",            "参数错误"),
         OUT_TRADE_NO_USED       (403, "OUT_TRADE_NO_USED",      "商户订单号重复"),
-        ORDERNOTEXIST           (202, "ORDERNOTEXIST",          "订单不存在"),
-        ORDER_CLOSED            (202, "ORDER_CLOSED",           "订单已关闭"),
-        OPENID_MISMATCH         (202, "OPENID_MISMATCH",        "openid和appid不匹配"),
-        NOTENOUGH               (202, "NOTENOUGH",              "余额不足"),
-        NOAUTH                  (202, "NOAUTH",                 "商户无权限"),
-        MCH_NOT_EXISTS          (202, "MCH_NOT_EXISTS",         "商户号不存在"),
-        INVALID_TRANSACTIONID   (202, "INVALID_TRANSACTIONID",  "订单号非法"),
-        INVALID_REQUEST         (202, "INVALID_REQUEST",        "无效请求"),
-        FREQUENCY_LIMITED       (202, "FREQUENCY_LIMITED",      "频率超限"),
-        BANKERROR               (202, "BANKERROR",              "银行系统异常"),
-        APPID_MCHID_NOT_MATCH   (202, "APPID_MCHID_NOT_MATCH",  "appid和mch_id不匹配"),
-        ACCOUNTERROR            (202, "ACCOUNTERROR",           "账号异常");
+        ORDERNOTEXIST           (404, "ORDERNOTEXIST",          "订单不存在"),
+        ORDER_CLOSED            (400, "ORDER_CLOSED",           "订单已关闭"),
+        OPENID_MISMATCH         (500, "OPENID_MISMATCH",        "openid和appid不匹配"),
+        NOTENOUGH               (403, "NOTENOUGH",              "余额不足"),
+        NOAUTH                  (403, "NOAUTH",                 "商户无权限"),
+        MCH_NOT_EXISTS          (400, "MCH_NOT_EXISTS",         "商户号不存在"),
+        INVALID_TRANSACTIONID   (500, "INVALID_TRANSACTIONID",  "订单号非法"),
+        INVALID_REQUEST         (400, "INVALID_REQUEST",        "无效请求"),
+        FREQUENCY_LIMITED       (429, "FREQUENCY_LIMITED",      "频率超限"),
+        BANKERROR               (500, "BANKERROR",              "银行系统异常"),
+        APPID_MCHID_NOT_MATCH   (400, "APPID_MCHID_NOT_MATCH",  "appid和mch_id不匹配"),
+        ACCOUNTERROR            (403, "ACCOUNTERROR",           "账号异常");
 
         private final Integer statusCode;
         private final String errorCode;
