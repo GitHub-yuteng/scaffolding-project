@@ -1,6 +1,7 @@
 package com.scaffolding.service.order;
 
 import com.scaffolding.pojo.vo.CellVO;
+import com.scaffolding.pojo.vo.StatusCountVO;
 import com.scaffolding.service.order.constant.OrderCellConstant;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,6 @@ import java.util.stream.Collectors;
 @Service
 public class OrderInfoContext {
 
-
     /**
      * 买方 APP我的 订单Cell
      *
@@ -33,4 +33,11 @@ public class OrderInfoContext {
         return orderCellList.stream().sorted(Comparator.comparing(CellVO::getSort)).collect(Collectors.toList());
     }
 
+    /**
+     *
+     * @return
+     */
+    public List<StatusCountVO> listOrderCellCount() {
+        return new ArrayList<>();
+    }
 }
