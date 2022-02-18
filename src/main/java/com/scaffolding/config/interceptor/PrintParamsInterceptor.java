@@ -1,8 +1,7 @@
 package com.scaffolding.config.interceptor;
 
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.HandlerInterceptor;
 
 /**
  * @Description: 继承WebMvcConfigurationSupport或WebMvcConfigurerAdapter类，重写addInterceptors，InterceptorRegistry实例就可以直接添加。
@@ -11,10 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  * @Date 2022/2/18 10:04 上午
  */
 @Component
-public class PrintParamsInterceptor extends WebMvcConfigurationSupport {
+public class PrintParamsInterceptor implements HandlerInterceptor {
 
-    @Override
-    protected void addInterceptors(InterceptorRegistry registry) {
-        super.addInterceptors(registry);
-    }
 }

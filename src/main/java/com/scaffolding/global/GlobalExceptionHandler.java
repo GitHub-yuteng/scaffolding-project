@@ -25,8 +25,8 @@ import org.springframework.web.servlet.NoHandlerFoundException;
  * 全局统一的异常处理，根据自己的业务要求详细配置
  * @author whh-yt
  */
-@RestControllerAdvice
 @Slf4j
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     /**

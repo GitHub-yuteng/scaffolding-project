@@ -20,7 +20,7 @@ public class PlatformWebRequestInterceptor implements WebRequestInterceptor {
 
     @Override
     public void preHandle(WebRequest webRequest) throws Exception {
-        System.out.println(objectMapper.writeValueAsString(webRequest));
+        System.out.println(webRequest);
     }
 
     @Override

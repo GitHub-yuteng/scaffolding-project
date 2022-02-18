@@ -1,6 +1,7 @@
 package com.scaffolding.config;
 
 import com.scaffolding.config.interceptor.RepeatSubmitInterceptor;
+import com.scaffolding.config.interceptor.PlatformWebRequestInterceptor;
 import com.scaffolding.config.interceptor.RequestInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -15,18 +16,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    private static final String[] REQUEST_INTERCEPTOR = {"/app"};
-
     @Autowired
     private RequestInterceptor requestInterceptor;
     @Autowired
     private RepeatSubmitInterceptor repeatSubmitInterceptor;
+    @Autowired
+    private PlatformWebRequestInterceptor platformWebRequestInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        final String[] excludePathPatterns = {"/error","/files/**"};
-        registry.addInterceptor(requestInterceptor).addPathPatterns("/**").excludePathPatterns(excludePathPatterns);
-        registry.addInterceptor(repeatSubmitInterceptor).addPathPatterns("/**").excludePathPatterns(excludePathPatterns);
-
+        registry.addInterceptor(requestInterceptor);
+        registry.addInterceptor(repeatSubmitInterceptor);
+        registry.addWebRequestInterceptor(platformWebRequestInterceptor);
     }
 }

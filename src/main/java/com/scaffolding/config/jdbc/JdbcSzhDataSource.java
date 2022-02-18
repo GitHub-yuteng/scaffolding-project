@@ -28,9 +28,9 @@ public class JdbcSzhDataSource {
     public final static String SZH_DEFAULT_TRANSACTION_MANAGER = "szh_default_transactionManager";
     public final static String SZH_DEFAULT_TRANSACTION_TEMPLATE = "szh_default_transactionTemplate";
 
-    private String jdbcUrl = "jdbc:mysql://101.33.241.122:3306/uc?serverTimezone=UTC";
-    private String username = "root";
-    private String password = "123456";
+    private final static String JDBC_URL = "jdbc:mysql://101.33.241.122:3306/uc?serverTimezone=UTC";
+    private final static String USERNAME = "root";
+    private final static String PASSWORD = "123456";
 
     /**
      * Hikar连接池的DataSource
@@ -38,13 +38,13 @@ public class JdbcSzhDataSource {
      * @return
      */
     @Bean(name = "szh_default_dataSource")
-    public DataSource lotteryDefaultDataSource() throws SQLException {
+    public DataSource szhDataSource() throws SQLException {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setName("szh_default_dataSource");
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl(jdbcUrl);
-        dataSource.setUsername(username);
-        dataSource.setPassword(password);
+        dataSource.setUrl(JDBC_URL);
+        dataSource.setUsername(USERNAME);
+        dataSource.setPassword(PASSWORD);
         dataSource.setInitialSize(2);
         dataSource.setMaxActive(100);
         dataSource.setMinIdle(50);
@@ -66,7 +66,7 @@ public class JdbcSzhDataSource {
     @Primary
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(lotteryDefaultDataSource());
+        bean.setDataSource(szhDataSource());
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:**/mapper/szh/**/*.xml"));
         return bean.getObject();
     }
@@ -74,7 +74,7 @@ public class JdbcSzhDataSource {
     @Bean(name = JdbcSzhDataSource.SZH_DEFAULT_TRANSACTION_MANAGER)
     @Primary
     public DataSourceTransactionManager testTransactionManager() throws SQLException {
-        return new DataSourceTransactionManager(lotteryDefaultDataSource());
+        return new DataSourceTransactionManager(szhDataSource());
     }
 
     @Bean(value = JdbcSzhDataSource.SZH_DEFAULT_TRANSACTION_TEMPLATE)
@@ -91,7 +91,7 @@ public class JdbcSzhDataSource {
     @Bean("szh_default_jdbcTemplate")
     public JdbcTemplate jdbcTemplate() throws SQLException {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        jdbcTemplate.setDataSource(lotteryDefaultDataSource());
+        jdbcTemplate.setDataSource(szhDataSource());
         return jdbcTemplate;
     }
 
