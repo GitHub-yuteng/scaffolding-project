@@ -10,6 +10,7 @@ import com.scaffolding.pojo.req.StringReq;
 import com.scaffolding.pojo.vo.StatusCountVO;
 import com.scaffolding.service.app.mine.MineInfoContext;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
+import com.scaffolding.util.JacksonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,15 +45,15 @@ public class MineController {
     @PostMapping(value = "/detail")
     public ResponseResult<MineInfoVO> queryMineInfo(@RequestBody StringReq stringReq) {
         try {
-            log.info("MineController#queryMineInfo: Mine, param:{}",stringReq.toString());
+            log.info("MineController#queryMineInfo: Mine, param:{}", stringReq.toString());
             UserInfo userInfo = Authentication.getUserInfo();
-            MineInfoVO result = mineInfoContext.queryMineInfo(stringReq,userInfo);
+            MineInfoVO result = mineInfoContext.queryMineInfo(stringReq, userInfo);
             return ResponseResult.success(result);
         } catch (AppException e) {
             return ResponseResult.fail(e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
-            log.error("MineController#queryMineInfo, Mine, param:{}, Exception:{}", stringReq.toString(), e.getMessage());
+            log.error("MineController#queryMineInfo, Mine, param:{}", stringReq.toString(), e);
             return ResponseResult.fail(GlobalConstant.NETWORK_ERROR);
         }
     }
@@ -65,14 +66,14 @@ public class MineController {
     @PostMapping(value = "/orderCellCount")
     public ResponseResult<List<StatusCountVO>> queryOrderCellCount(@RequestBody @Valid StringReq stringReq, HttpServletResponse response) {
         try {
-            log.info("OrderInfoController#queryOrderCellCount: 获取对应状态的订单数, param:{}");
+            log.info("OrderInfoController#queryOrderCellCount: 获取对应状态的订单数, param:{}", JacksonUtil.toJsonString(stringReq));
             UserInfo userInfo = Authentication.getUserInfo();
             List<StatusCountVO> orderStatusCountVO = mineInfoContext.listOrderCellCount(stringReq, userInfo);
             return ResponseResult.success(orderStatusCountVO);
         } catch (AppException e) {
             return ResponseResult.fail(e.getMessage());
         } catch (Exception e) {
-            log.error("OrderInfoController#queryOrderCellCount, 获取对应状态的订单数, param:{}, Exception:{}", e.getMessage());
+            log.error("OrderInfoController#queryOrderCellCount, 获取对应状态的订单数, param:{}", JacksonUtil.toJsonString(stringReq), e);
             return ResponseResult.fail(GlobalConstant.NETWORK_ERROR);
         }
     }

@@ -1,6 +1,6 @@
 package com.scaffolding.init;
 
-import com.scaffolding.wxpay.service.IHaXiaoHuiPayStrategy;
+import com.scaffolding.wxpay.IHaXiaoHuiPayStrategy;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.CommandLineRunner;

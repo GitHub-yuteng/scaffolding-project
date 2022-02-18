@@ -1,4 +1,4 @@
-package com.scaffolding.wxpay.service;
+package com.scaffolding.wxpay;
 
 /**
  * @Description: TODO

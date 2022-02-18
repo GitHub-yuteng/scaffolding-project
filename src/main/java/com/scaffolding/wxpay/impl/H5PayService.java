@@ -1,5 +1,6 @@
-package com.scaffolding.wxpay.service;
+package com.scaffolding.wxpay.impl;
 
+import com.scaffolding.wxpay.IHaXiaoHuiPayStrategy;
 import org.springframework.stereotype.Service;
 
 /**
