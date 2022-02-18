@@ -12,6 +12,7 @@ import java.io.Serializable;
 @Data
 public class ResponseResult<T> implements Serializable {
 
+    private static final long serialVersionUID = 4934748935800590749L;
     private int status;
     private String message;
     private T data;

@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @author whh-yt
  */
 @Configuration
-public class MvcConfig implements WebMvcConfigurer {
+public class WebConfig implements WebMvcConfigurer {
 
     private static final String[] REQUEST_INTERCEPTOR = {"/app"};
 
