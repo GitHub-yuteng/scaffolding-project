@@ -9,7 +9,6 @@ import com.scaffolding.service.app.mine.enums.RoleClazzEnum;
 import com.scaffolding.service.app.mine.role.IMineRoleStrategy;
 import com.scaffolding.service.app.mine.vo.MineInfoVO;
 import com.scaffolding.service.order.OrderInfoContext;
-import com.scaffolding.util.JacksonUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +41,6 @@ public class MineInfoContext {
      */
     public MineInfoVO queryMineInfo(StringReq stringReq, UserInfo userInfo) {
         if (StringUtils.isBlank(stringReq.getCode())) {
-            log.info("MineInfoContext#queryMineInfo, param:{}", JacksonUtil.toJsonString(stringReq));
             throw new AppException(MineConstant.CODE_IS_ERROR);
         }
         RoleClazzEnum roleClazzEnum = RoleClazzEnum.getEnumByType(stringReq.getCode());
