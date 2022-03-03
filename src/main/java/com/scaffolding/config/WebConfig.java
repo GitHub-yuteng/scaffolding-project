@@ -23,6 +23,10 @@ public class WebConfig implements WebMvcConfigurer {
     @Autowired
     private PlatformWebRequestInterceptor platformWebRequestInterceptor;
 
+    /**
+     * 添加拦截器
+     * @param registry
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(requestInterceptor);

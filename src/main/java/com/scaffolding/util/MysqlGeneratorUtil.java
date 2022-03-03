@@ -22,7 +22,7 @@ public class MysqlGeneratorUtil {
                 .globalConfig(builder -> {
                     builder.author("Vm") // 设置作者
                             .fileOverride() // 覆盖已生成文件
-                            .outputDir(projectPath + "/src/main/java/com/scaffolding/support"); // 指定输出目录
+                            .outputDir(projectPath + "/src/main/java"); // 指定输出目录
                 })
                 // 包配置
                 .packageConfig(builder -> {
@@ -30,6 +30,7 @@ public class MysqlGeneratorUtil {
                             .controller("")
                             .serviceImpl("")
                             .service("")
+                            .entity("pojo.entity")
                             .mapper("")
                             .xml("");
                 })

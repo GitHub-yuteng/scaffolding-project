@@ -7,6 +7,4 @@ package com.scaffolding.wxpay;
  */
 public interface IHaXiaoHuiPayStrategy {
 
-
-
 }

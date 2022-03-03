@@ -28,10 +28,5 @@ public class GlobalPathConstant {
      * 订单
      */
     public static final String ORDER_PATH   = "/order";
-    /**
-     * 拜访
-     */
-    public static final String VISIT_PATH   = "/visit";
-    public static final String VISIT_REPORT_PATH = "/visit-report";
-
+    public static final String PRODUCT_PATH   = "/product";
 }
