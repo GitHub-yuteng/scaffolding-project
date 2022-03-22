@@ -10,11 +10,11 @@ public class Authentication {
 
     private static final ThreadLocal<UserInfo> USER_INFO_THREAD_LOCAL = new ThreadLocal<>();
 
-    public static void setUserInfoDtoThreadLocal(UserInfo _userInfo) {
+    public static void setUserInfoThreadLocal(UserInfo _userInfo) {
         USER_INFO_THREAD_LOCAL.set(_userInfo);
     }
 
-    public static void removeCustomerInfo() {
+    public static void remove() {
         USER_INFO_THREAD_LOCAL.remove();
     }
 

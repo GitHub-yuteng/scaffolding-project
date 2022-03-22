@@ -5,28 +5,55 @@ package com.scaffolding.constant.path;
  * @Date 2021/8/17
  * @Dec 全局常量池
  */
-public class GlobalPathConstant {
+public interface GlobalPathConstant {
 
-
-    public static final String IM           = "IM";
-    public static final String VERSION_1    = "/v1";
-    public static final String VERSION_2    = "/v2";
+    String IM = "IM";
+    /**
+     * 版本
+     */
+    String VERSION_1 = "/v1";
+    String VERSION_2 = "/v2";
 
     /**
-     * 需要拦截获取用户信息前缀
+     * 需要拦截登录信息的前缀
      */
-    public static final String INTERCEPT_PATH = "/app";
-    public static final String OPEN_PATH      = "/open";
+    String INTERCEPT_PATH = "/api";
+    /**
+     * 不需要拦截用户信息的前缀
+     */
+    String OPEN_PATH = "/open";
     /**
      * bar
      */
-    public static final String HOME         = "/home";
-    public static final String MESSAGE      = "/message";
-    public static final String TOOLS        = "/tools";
-    public static final String MINE         = "/mine";
+    String HOME = "/home";
+    String MESSAGE = "/message";
+    String TOOLS = "/tools";
+    String MINE = "/mine";
+
+    /**
+     * 登录
+     */
+    String LOGIN = "/login";
     /**
      * 订单
      */
-    public static final String ORDER_PATH   = "/order";
-    public static final String PRODUCT_PATH   = "/product";
+    String ORDER_PATH = "/order";
+    /**
+     * 分享订单
+     */
+    String SHARE_ORDER_PATH = "/share/order";
+    /**
+     * 营销接口
+     */
+    String MARKETING_PATH = "/marketing";
+    /**
+     * 商详
+     */
+    String PRODUCT_PATH = "/product";
+    /**
+     * 售后
+     */
+    String REFUND_PATH = "/refund";
+    String SHOPCART_PATH = "/shopCart";
+    String PAY_PATH = "/pay";
 }

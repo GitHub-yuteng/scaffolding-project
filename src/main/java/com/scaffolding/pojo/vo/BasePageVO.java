@@ -15,7 +15,7 @@ public class BasePageVO<T> {
     /**
      * 总数.
      */
-    protected Long totalCount;
+    protected Integer totalCount;
     /**
      * 当前页码.
      */
@@ -28,6 +28,15 @@ public class BasePageVO<T> {
      * 是否是最后一页
      */
     protected Boolean finished;
+
+    public Boolean getFinished() {
+        if (this.finished != null) {
+            return finished;
+        }
+        finished = (currentPage * pageSize) >= totalCount;
+        return finished;
+    }
+
     /**
      * The data.
      */

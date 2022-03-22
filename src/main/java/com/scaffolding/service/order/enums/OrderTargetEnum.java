@@ -13,23 +13,28 @@ import lombok.Getter;
 public enum OrderTargetEnum {
 
     /**
-     *
+     * 订单
      */
-    ALL                 (0, "全部",1),
+    ALL                 (0, "全部",  1),
     WAIT_PAY            (1, "待支付",6),
     WAIT_DELIVERY       (2, "待发货",8),
-    WAIT_SIGN           (3, "待签收",10),
-    BEEN_DELIVERY       (4, "已发货",15),
     WAIT_RECEIVE        (5, "待收货",16),
     RECEIVED            (6, "已收货",18),
     COMPLETED           (7, "已完成",19),
-    WAIT_EVALUATION     (9, "待评价",20),
-    CLOSED              (10, "交易关闭",23),
-    BEEN_CLOSED         (13, "已关闭",23),
+    CLOSED              (9, "交易关闭",23),
 
-    // cell 售后相关
-    REFUND_AFTER_MINE   (51,"退款/售后",50),
-    REFUND_AFTER_HOME   (52,"退款/售后",50),
+    // 售后
+    REFUND_AFTER   (51,"退款/售后",50),
+
+    /**
+     * 推广订单
+     */
+    ALL_STATUS          (100, "全部状态",1),
+    WAIT_SETTLEMENT     (105, "待结算", 5),
+    SETTLED             (110, "已结算", 10),
+    INVALID             (115, "已失效", 15),
+
+
     ;
 
     /**

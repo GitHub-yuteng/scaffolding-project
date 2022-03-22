@@ -16,11 +16,11 @@ public class BasePageReq implements Serializable {
     /**
      * 当前页码.
      */
-    protected Long currentPage = 1L;
+    protected Integer currentPage = 1;
 
-    public Long getCurrentPage() {
+    public Integer getCurrentPage() {
         if (this.currentPage == null || this.currentPage == 0) {
-            return 1L;
+            return 1;
         }
         return currentPage;
     }
@@ -28,11 +28,11 @@ public class BasePageReq implements Serializable {
     /**
      * 每页记录数.
      */
-    protected Long pageSize = 10L;
+    protected Integer pageSize = 10;
 
-    public Long getPageSize() {
+    public Integer getPageSize() {
         if (this.pageSize == null) {
-            return 10L;
+            return 10;
         }
         return pageSize;
     }

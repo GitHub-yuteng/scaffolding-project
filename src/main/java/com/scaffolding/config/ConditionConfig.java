@@ -1,9 +1,9 @@
 package com.scaffolding.config;
 
-import com.scaffolding.condition.LinuxCondition;
-import com.scaffolding.condition.MacCondition;
-import com.scaffolding.condition.WindowsCondition;
-import com.scaffolding.global.bean.PcPlatformBean;
+import com.whhim.hxh.condition.LinuxCondition;
+import com.whhim.hxh.condition.MacCondition;
+import com.whhim.hxh.condition.WindowsCondition;
+import com.whhim.hxh.pojo.bean.PcPlatformBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;

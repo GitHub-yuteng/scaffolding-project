@@ -14,9 +14,13 @@ public class UserInfo implements Serializable {
 
     private static final long serialVersionUID = -7812362499262764763L;
 
-    private String id;
-    private String username;
-    private String icon;
+    private Long id;
+    private String openId;
+    private String unionId;
+    private String userCode;
+    private String nickname;
     private String token;
+    private Integer usertype;
+    private String platformSource;
 
 }

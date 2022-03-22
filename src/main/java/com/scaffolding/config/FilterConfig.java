@@ -1,6 +1,6 @@
 package com.scaffolding.config;
 
-import com.scaffolding.config.filter.CrosFilter;
+import com.whhim.hxh.config.filter.CorsFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.core.Ordered;
 
@@ -9,10 +9,10 @@ import org.springframework.core.Ordered;
  */
 public class FilterConfig {
 
-    private CrosFilter crosFilter;
+    private CorsFilter crosFilter;
 
-    public FilterRegistrationBean<CrosFilter> crosFilter() {
-        FilterRegistrationBean<CrosFilter> registration = new FilterRegistrationBean<>();
+    public FilterRegistrationBean<CorsFilter> crosFilter() {
+        FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<>();
         registration.setFilter(crosFilter);
         registration.addUrlPatterns("/*");
         registration.setName("crosFilter");
